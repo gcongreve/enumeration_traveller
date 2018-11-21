@@ -60,40 +60,16 @@ Traveller.prototype.getJourneyTransport = function() {
 };
 
 Traveller.prototype.getUniqueModesOfTransport = function () {
-  let transports = this.getJourneyTransport;
-  let unique = [];
+  const transports = this.getJourneyTransport();
+  const unique = [];
 
-  for (transport in transports){
+  transports.forEach((transport) => {
     if (!unique.includes(transport)){
-        unique.push(transport)
-      }
-  }
-   return unique;
+      unique.push(transport);
+    }
+  })
+  return unique;
 };
-
-
-// Traveller.prototype.getUniqueModesOfTransport = function () {
-//   let unique = this.journeys.filter((journey) => {
-//     if unique.includes(!journey){
-//       return journey
-//     }
-//   })
-//   return unique;
-// };
-
-// Traveller.prototype.getUniqueModesOfTransport = function () {
-//   let unique = [];
-//   for (journey of this.journeys){
-//     if unique.includes(!journey){
-//       unique.push(journey);
-//     }
-//   }
-//   return unique;
-// };
-
-
-
-
 
 
 
